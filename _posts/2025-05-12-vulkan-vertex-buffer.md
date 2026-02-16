@@ -8,6 +8,8 @@ tags:
   - "tistory"
 ---
 
+{% raw %}
+
 Vertex Buffer ~ find memory type 날라감
 
 버퍼까지는 잘 만들었지만, 아직 메모리는 할당되지 않았습니다.
@@ -546,3 +548,4 @@ vkCmdDrawIndexed(commandBuffer,
 따란 드디어 indexing을 사용해서 사각형을 그렸다!!
 
 ![](https://blog.kakaocdn.net/dna/bidGoJ/btsNE49b01V/AAAAAAAAAAAAAAAAAAAAAGd6cIkoPZuTyzBKVzU4EBa8ZF5AIBsJHVAz_1mhii06/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1772290799&allow_ip=&allow_referer=&signature=XTgRJ4NO7Zg0j5wmQ8gEYutb5L4%3D)
+{% endraw %}

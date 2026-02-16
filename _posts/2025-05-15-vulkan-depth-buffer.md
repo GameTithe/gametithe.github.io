@@ -8,6 +8,8 @@ tags:
   - "tistory"
 ---
 
+{% raw %}
+
 이번 장에서는 Z 좌표를 도입하여 3D mesh를 위한 기반을 마련해봅시다.
 
 3D Geometry
@@ -609,3 +611,4 @@ void cleanupSwapChain() {
 
 드디어 3D geometry를 올바르게 렌더링할 수 있게 되었습니다!! 하하하...!  
 다음 장에서는 모델을 불러봐봅시다~
+{% endraw %}
