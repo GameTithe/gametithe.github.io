@@ -1,0 +1,7 @@
+191	HTTP 403	https://tithingbygame.tistory.com/191
+197	HTTP 403	https://tithingbygame.tistory.com/197
+209	HTTP 403	https://tithingbygame.tistory.com/209
+223	HTTP 403	https://tithingbygame.tistory.com/223
+251	NO_CONTENT	https://tithingbygame.tistory.com/251
+265	HTTP 403	https://tithingbygame.tistory.com/265
+268	HTTP 403	https://tithingbygame.tistory.com/268

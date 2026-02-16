@@ -11,8 +11,8 @@ from markdownify import markdownify as md
 from tqdm import tqdm
 
 BLOG_URL = "https://tithingbygame.tistory.com"
-START_ID = 1
-END_ID = 30  # first test range
+START_ID = 31
+END_ID = 400  # first test range
 DELAY_SEC = 0.6
 
 ROOT = Path(__file__).resolve().parents[1]
