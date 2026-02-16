@@ -3,9 +3,9 @@ title: "[RDM Plugin] QA4: 자연스러운 파편 생성 및 최적화"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 총알이 많이 충돌되었을 때,  프레임 드랍이 심하다는 이슈가 들어왔다.

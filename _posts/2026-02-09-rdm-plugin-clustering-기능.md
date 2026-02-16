@@ -3,9 +3,9 @@ title: "[RDM Plugin] Clustering 기능"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 Union Find 알고리즘을 사용해서 clustering 을 구현했다.

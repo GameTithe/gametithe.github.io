@@ -3,9 +3,9 @@ title: "[RDM Plugin] QA3: Mesh Island error"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 disconnected까지 잘 처리하고 있는데도,

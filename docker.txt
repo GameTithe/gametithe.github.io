@@ -1,0 +1,1 @@
+docker run --rm -p 4000:4000 -v "%cd%:/srv/jekyll" jekyll/jekyll:4 sh -c "gem install webrick -N && jekyll serve

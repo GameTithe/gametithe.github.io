@@ -3,9 +3,9 @@ title: "[RDM Plugin] 멀티쓰레딩 최적화"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 우리 플러그인인 Realtime Destructible Mesh에서의 가장큰 병목은 Boolean Operation 연산이라고 파악이 되었고, 이를 해결하기 위해서 멀티쓰레딩을 도입했습니다.

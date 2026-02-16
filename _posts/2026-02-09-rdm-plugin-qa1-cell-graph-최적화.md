@@ -3,9 +3,9 @@ title: "[RDM Plugin] QA1: Cell graph 최적화"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 Cell Structure가 들어온 이후 갑자기 frame drop이 심해졌다는 이슈 ( cell structure 만의 잘못은 아니였고, 여러 문제가 겹쳤었다. )

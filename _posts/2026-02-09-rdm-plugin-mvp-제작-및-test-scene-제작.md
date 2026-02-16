@@ -3,9 +3,9 @@ title: "[RDM Plugin] MVP 제작 및 Test Scene 제작"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 총알이 여러발 피격되서 부하를 생기는 상황을 만들기 위해서 총을 여러 개 생성할 수 있도록 테스트 환경을 구축했다.

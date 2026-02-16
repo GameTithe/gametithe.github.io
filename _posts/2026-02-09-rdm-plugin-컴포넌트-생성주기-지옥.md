@@ -3,9 +3,9 @@ title: "[RDM Plugin] 컴포넌트 생성주기 지옥"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 ### 핵심

@@ -1,0 +1,320 @@
+---
+layout: default
+---
+
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+  :root {
+    --bg: #f3f6fb;
+    --panel: #ffffff;
+    --ink: #0f172a;
+    --sub: #64748b;
+    --line: #e2e8f0;
+    --accent: #1363df;
+    --accent-2: #22a3f5;
+    --shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
+  }
+
+  .page-content {
+    background: radial-gradient(circle at 10% 0%, #e8f0ff 0%, #f6f8fc 34%, #f3f6fb 100%);
+  }
+
+  .page-content .wrapper {
+    max-width: 1240px;
+    padding-top: 24px;
+    padding-bottom: 28px;
+  }
+
+  .gt-layout {
+    font-family: "Pretendard", "Noto Sans KR", sans-serif;
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .gt-side {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .gt-profile {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+
+  .gt-avatar {
+    width: 94px;
+    height: 94px;
+    border-radius: 999px;
+    background: linear-gradient(140deg, var(--accent), var(--accent-2));
+    box-shadow: 0 12px 20px rgba(19, 99, 223, 0.28);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .gt-title {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .gt-subtitle {
+    margin: 4px 0 0;
+    color: var(--sub);
+    font-size: 0.87rem;
+  }
+
+  .gt-nav {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gt-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 11px;
+    border-radius: 10px;
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: background .15s ease, color .15s ease, transform .15s ease;
+  }
+
+  .gt-nav a:hover {
+    background: #edf4ff;
+    color: #0b4fca;
+    transform: translateX(3px);
+  }
+
+  .gt-icon {
+    width: 18px;
+    height: 18px;
+    color: #3b82f6;
+    flex: 0 0 auto;
+  }
+
+  .gt-social {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .gt-social a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--line);
+    background: #f8fbff;
+    border-radius: 10px;
+    padding: 9px 10px;
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: border-color .15s ease, background .15s ease;
+  }
+
+  .gt-social a:hover {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+  }
+
+  .gt-main {
+    display: grid;
+    gap: 14px;
+  }
+
+  .gt-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .gt-panel h2 {
+    margin: 0 0 14px;
+    font-size: 1.16rem;
+    letter-spacing: -0.01em;
+  }
+
+  .gt-posts {
+    display: grid;
+    gap: 11px;
+  }
+
+  .gt-post {
+    border: 1px solid #e9eef6;
+    border-radius: 12px;
+    padding: 12px;
+    background: #fff;
+  }
+
+  .gt-post .meta {
+    font-size: 0.81rem;
+    color: var(--sub);
+    margin-bottom: 6px;
+  }
+
+  .gt-post .title {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .gt-post .title a {
+    color: #0f172a;
+    text-decoration: none;
+  }
+
+  .gt-post .title a:hover {
+    color: #0d4dc7;
+  }
+
+  .gt-post .excerpt {
+    margin: 0;
+    color: #475569;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .gt-chip-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .gt-chip {
+    display: inline-block;
+    border: 1px solid #dbe7fb;
+    background: #f4f8ff;
+    color: #15427f;
+    font-size: 0.84rem;
+    border-radius: 999px;
+    padding: 6px 10px;
+    text-decoration: none;
+  }
+
+  .gt-archive {
+    margin: 0;
+    padding-left: 16px;
+    color: #334155;
+    display: grid;
+    gap: 6px;
+  }
+
+  .gt-archive a {
+    color: #334155;
+    text-decoration: none;
+  }
+
+  .gt-archive a:hover {
+    color: #0d4dc7;
+  }
+
+  @media (max-width: 980px) {
+    .gt-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .gt-side {
+      position: static;
+    }
+  }
+</style>
+
+<section class="gt-layout" id="home">
+  <aside class="gt-side">
+    <section class="gt-profile">
+      <div class="gt-avatar">GT</div>
+      <h1 class="gt-title">GameTithe's Blog</h1>
+      <p class="gt-subtitle">게임만드는 건물주</p>
+    </section>
+
+    <ul class="gt-nav">
+      <li><a href="#home"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>홈</a></li>
+      <li><a href="#categories"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7"/><rect x="14" y="4" width="7" height="7"/><rect x="3" y="15" width="7" height="7"/><rect x="14" y="15" width="7" height="7"/></svg>카테고리</a></li>
+      <li><a href="#tags"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4L12 22l-9-9V4h9z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>태그</a></li>
+      <li><a href="#archive"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="4"/><path d="M5 8h14v12H5z"/><path d="M10 12h4"/></svg>아카이브</a></li>
+      <li><a href="#info"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h2v5h-2z"/></svg>정보</a></li>
+    </ul>
+
+    <div class="gt-social">
+      <a href="https://github.com/GameTithe" target="_blank" rel="noopener noreferrer"><svg class="gt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 .2 1.6-.7 2-.9.1-.8.4-1.3.7-1.6-2.7-.3-5.6-1.4-5.6-6.1 0-1.4.5-2.6 1.2-3.5-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.8 1.3a13 13 0 0 1 7 0c2.8-1.6 3.8-1.3 3.8-1.3.6 1.7.2 3 .1 3.3.8.9 1.2 2.1 1.2 3.5 0 4.7-2.9 5.8-5.7 6.1.4.4.8 1.2.8 2.3v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a href="mailto:you@example.com"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>이메일</a>
+    </div>
+  </aside>
+
+  <main class="gt-main">
+    <section class="gt-panel">
+      <h2>최근 글</h2>
+      <div class="gt-posts">
+        {% for post in site.posts limit: 24 %}
+          <article class="gt-post">
+            <div class="meta">{{ post.date | date: "%Y.%m.%d" }}{% if post.categories and post.categories.size > 0 %} · {{ post.categories | first }}{% endif %}</div>
+            <h3 class="title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="gt-panel" id="categories">
+      <h2>카테고리</h2>
+      <div class="gt-chip-wrap">
+        {% for category in site.categories %}
+          <span class="gt-chip">{{ category[0] }} ({{ category[1].size }})</span>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="gt-panel" id="tags">
+      <h2>태그</h2>
+      <div class="gt-chip-wrap">
+        {% assign sorted_tags = site.tags | sort %}
+        {% for tag in sorted_tags limit: 40 %}
+          <span class="gt-chip">#{{ tag[0] }}</span>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="gt-panel" id="archive">
+      <h2>아카이브</h2>
+      <ul class="gt-archive">
+        {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+        {% for year in posts_by_year %}
+          <li>{{ year.name }}년 ({{ year.items | size }}개)</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="gt-panel" id="info">
+      <h2>정보</h2>
+      <p>이 페이지는 티스토리 스타일을 참고해 사이드바 중심 UI로 재구성한 커스텀 홈입니다.</p>
+      <p>총 게시글: <strong>{{ site.posts | size }}</strong>개 · RSS: <a href="{{ '/feed.xml' | relative_url }}">feed.xml</a></p>
+    </section>
+  </main>
+</section>

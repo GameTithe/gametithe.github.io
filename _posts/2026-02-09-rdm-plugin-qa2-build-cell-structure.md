@@ -3,9 +3,9 @@ title: "[RDM Plugin] QA2: Build Cell Structure"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 중간 중간 작은 파편들이 발생하는 경우가 생겨서 Debug 모드로 자세히 살펴보았다.

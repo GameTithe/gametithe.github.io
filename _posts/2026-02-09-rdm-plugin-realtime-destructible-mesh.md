@@ -3,9 +3,9 @@ title: "[RDM Plugin] Realtime Destructible Mesh"
 date: 2026-02-09
 toc: true
 categories:
-  - "Tistory"
+  - "UE5_Plugins"
 tags:
-  - "tistory"
+  - "UE5_Plugin"
 ---
 
 언리얼 플러그인을 출시했습니다.
