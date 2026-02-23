@@ -1,3 +1,13 @@
-theme: minima
 title: "GameTithe"
-description: ""
+description: "Game development and graphics programming notes."
+url: "https://gametithe.github.io"
+baseurl: ""
+lang: "ko-KR"
+timezone: "Asia/Seoul"
+theme: minima
+google_site_verification: ""
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
