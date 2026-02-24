@@ -288,39 +288,51 @@ layout: default
 
               <div class="gt-sub-grid">
                 {% assign seen_subs = "" %}
-                {% for sub_post in sorted_posts %}
-                  {% assign sub_main = sub_post.categories | first | default: "Uncategorized" %}
-                  {% if sub_main == main %}
-                    {% assign sub = sub_post.sub_category | default: sub_post.subcategory | default: sub_post.categories[1] | default: "General" %}
-                    {% assign sub_marker = "|" | append: sub | append: "|" %}
-                    {% unless seen_subs contains sub_marker %}
-                      {% assign seen_subs = seen_subs | append: sub_marker %}
+                {% for pass in (1..2) %}
+                  {% for sub_post in sorted_posts %}
+                    {% assign sub_main = sub_post.categories | first | default: "Uncategorized" %}
+                    {% if sub_main == main %}
+                      {% assign sub = sub_post.sub_category | default: sub_post.subcategory | default: sub_post.categories[1] | default: "General" %}
+                      {% assign is_general = sub == "General" %}
+                      {% assign should_render = false %}
+                      {% if pass == 1 and is_general == false %}
+                        {% assign should_render = true %}
+                      {% endif %}
+                      {% if pass == 2 and is_general %}
+                        {% assign should_render = true %}
+                      {% endif %}
+                      {% if should_render %}
+                        {% assign sub_marker = "|" | append: sub | append: "|" %}
+                        {% unless seen_subs contains sub_marker %}
+                          {% assign seen_subs = seen_subs | append: sub_marker %}
 
-                      {% assign sub_count = 0 %}
-                      {% for count_post in sorted_posts %}
-                        {% assign count_main = count_post.categories | first | default: "Uncategorized" %}
-                        {% assign count_sub = count_post.sub_category | default: count_post.subcategory | default: count_post.categories[1] | default: "General" %}
-                        {% if count_main == main and count_sub == sub %}
-                          {% assign sub_count = sub_count | plus: 1 %}
-                        {% endif %}
-                      {% endfor %}
+                          {% assign sub_count = 0 %}
+                          {% for count_post in sorted_posts %}
+                            {% assign count_main = count_post.categories | first | default: "Uncategorized" %}
+                            {% assign count_sub = count_post.sub_category | default: count_post.subcategory | default: count_post.categories[1] | default: "General" %}
+                            {% if count_main == main and count_sub == sub %}
+                              {% assign sub_count = sub_count | plus: 1 %}
+                            {% endif %}
+                          {% endfor %}
 
-                      {% capture image_prefix %}/assets/images/categories/{{ main }}/{{ sub }}/{% endcapture %}
-                      {% assign sub_image = site.static_files | where_exp: "f", "f.path contains image_prefix" | first %}
+                          {% capture image_prefix %}/assets/images/categories/{{ main }}/{{ sub }}/{% endcapture %}
+                          {% assign sub_image = site.static_files | where_exp: "f", "f.path contains image_prefix" | first %}
 
-                      <a class="gt-sub-card" href="{{ '/category/' | relative_url }}?main={{ main | url_encode }}&sub={{ sub | url_encode }}">
-                        {% if sub_image %}
-                          <img class="gt-sub-thumb" src="{{ sub_image.path | relative_url }}" alt="{{ main }} {{ sub }}" loading="lazy" />
-                        {% else %}
-                          <div class="gt-sub-thumb-fallback">{{ sub }}</div>
-                        {% endif %}
-                        <div class="gt-sub-info">
-                          <p class="gt-sub-name">{{ sub }}</p>
-                          <p class="gt-sub-meta">{{ sub_count }} posts</p>
-                        </div>
-                      </a>
-                    {% endunless %}
-                  {% endif %}
+                          <a class="gt-sub-card" href="{{ '/category/' | relative_url }}?main={{ main | url_encode }}&sub={{ sub | url_encode }}">
+                            {% if sub_image %}
+                              <img class="gt-sub-thumb" src="{{ sub_image.path | relative_url }}" alt="{{ main }} {{ sub }}" loading="lazy" />
+                            {% else %}
+                              <div class="gt-sub-thumb-fallback">{{ sub }}</div>
+                            {% endif %}
+                            <div class="gt-sub-info">
+                              <p class="gt-sub-name">{{ sub }}</p>
+                              <p class="gt-sub-meta">{{ sub_count }} posts</p>
+                            </div>
+                          </a>
+                        {% endunless %}
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
                 {% endfor %}
               </div>
             </article>
