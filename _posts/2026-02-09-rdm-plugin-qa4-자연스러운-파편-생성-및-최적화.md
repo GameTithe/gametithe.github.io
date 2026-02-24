@@ -4,6 +4,7 @@ date: 2026-02-09
 toc: true
 categories:
   - "UE5_Plugins"
+sub_category: "Realtime Destructible Mesh"
 tags:
   - "UE5_Plugin"
 ---

@@ -80,7 +80,7 @@ layout: default
   .gt-nav {
     display: grid;
     gap: 8px;
-    margin: 0 0 14px;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
@@ -111,33 +111,6 @@ layout: default
     flex: 0 0 auto;
   }
 
-  .gt-social {
-    border-top: 1px solid var(--line);
-    padding-top: 14px;
-    display: grid;
-    gap: 8px;
-  }
-
-  .gt-social a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid var(--line);
-    background: #f8fbff;
-    border-radius: 10px;
-    padding: 9px 10px;
-    text-decoration: none;
-    color: #0f172a;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: border-color .15s ease, background .15s ease;
-  }
-
-  .gt-social a:hover {
-    border-color: #bfdbfe;
-    background: #eff6ff;
-  }
-
   .gt-main {
     display: grid;
     gap: 14px;
@@ -157,95 +130,104 @@ layout: default
     letter-spacing: -0.01em;
   }
 
-  .gt-posts {
+  .gt-topic-wrap {
     display: grid;
-    gap: 11px;
+    gap: 18px;
   }
 
-  .gt-post {
-    border: 1px solid #e9eef6;
-    border-radius: 12px;
-    padding: 12px;
-    background: #fff;
+  .gt-topic-box {
+    border: 1px solid #d7e4f8;
+    border-radius: 14px;
+    padding: 14px;
+    background: #f8fbff;
   }
 
-  .gt-post-top {
-    display: grid;
-    grid-template-columns: 120px minmax(0, 1fr);
-    gap: 12px;
-    align-items: start;
-  }
-
-  .gt-thumb {
-    width: 120px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    display: block;
-  }
-
-  .gt-post .meta {
-    font-size: 0.81rem;
-    color: var(--sub);
-    margin-bottom: 6px;
-  }
-
-  .gt-post .title {
-    margin: 0 0 6px;
-    font-size: 1rem;
-    line-height: 1.4;
-  }
-
-  .gt-post .title a {
-    color: #0f172a;
-    text-decoration: none;
-  }
-
-  .gt-post .title a:hover {
-    color: #0d4dc7;
-  }
-
-  .gt-post .excerpt {
-    margin: 0;
-    color: #475569;
-    font-size: 0.9rem;
-    line-height: 1.55;
-  }
-
-  .gt-chip-wrap {
+  .gt-topic-head {
     display: flex;
-    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
     gap: 8px;
+    margin-bottom: 12px;
   }
 
-  .gt-chip {
-    display: inline-block;
-    border: 1px solid #dbe7fb;
-    background: #f4f8ff;
-    color: #15427f;
-    font-size: 0.84rem;
-    border-radius: 999px;
-    padding: 6px 10px;
-    text-decoration: none;
-  }
-
-  .gt-archive {
+  .gt-topic-title {
     margin: 0;
-    padding-left: 16px;
+    font-size: 1.02rem;
+    color: #0f2d63;
+  }
+
+  .gt-topic-count {
+    color: #4b6696;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .gt-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 12px;
+  }
+
+  .gt-sub-card {
+    display: block;
+    border: 1px solid #dce7f7;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+
+  .gt-sub-card:hover {
+    transform: translateY(-3px);
+    border-color: #b6cff5;
+    box-shadow: 0 10px 24px rgba(19, 99, 223, 0.15);
+  }
+
+  .gt-sub-thumb {
+    width: 100%;
+    height: 116px;
+    object-fit: cover;
+    display: block;
+    background: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .gt-sub-thumb-fallback {
+    width: 100%;
+    height: 116px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(120deg, #dceaff 0%, #edf4ff 50%, #e5efff 100%);
+    color: #1d4b91;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .gt-sub-info {
+    padding: 10px;
+  }
+
+  .gt-sub-name {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #0f172a;
+  }
+
+  .gt-sub-meta {
+    margin: 4px 0 0;
+    font-size: 0.8rem;
+    color: #64748b;
+  }
+
+  .gt-info-list {
+    margin: 0;
+    padding-left: 18px;
     color: #334155;
     display: grid;
-    gap: 6px;
-  }
-
-  .gt-archive a {
-    color: #334155;
-    text-decoration: none;
-  }
-
-  .gt-archive a:hover {
-    color: #0d4dc7;
+    gap: 8px;
   }
 
   @media (max-width: 980px) {
@@ -255,17 +237,6 @@ layout: default
 
     .gt-side {
       position: static;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .gt-post-top {
-      grid-template-columns: 1fr;
-    }
-
-    .gt-thumb {
-      width: 100%;
-      height: 180px;
     }
   }
 </style>
@@ -278,85 +249,93 @@ layout: default
         src="{{ '/assets/images/profile/GameTithe.png' | relative_url }}"
         alt="GameTithe profile"
       />
-
       <h1 class="gt-title">GameTithe's Blog</h1>
-      <p class="gt-subtitle">게임만드는 건물주</p>
+      <p class="gt-subtitle">Game development and graphics programming notes</p>
     </section>
 
     <ul class="gt-nav">
-      <li><a href="#home"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>홈</a></li>
-      <li><a href="#categories"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7"/><rect x="14" y="4" width="7" height="7"/><rect x="3" y="15" width="7" height="7"/><rect x="14" y="15" width="7" height="7"/></svg>카테고리</a></li>
-      <li><a href="#tags"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4L12 22l-9-9V4h9z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg>태그</a></li>
-      <li><a href="#archive"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="4"/><path d="M5 8h14v12H5z"/><path d="M10 12h4"/></svg>아카이브</a></li>
-      <li><a href="#info"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01"/><path d="M11 12h2v5h-2z"/></svg>정보</a></li>
+      <li><a href="#home"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</a></li>
+      <li><a href="#category-groups"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7"/><rect x="14" y="4" width="7" height="7"/><rect x="3" y="15" width="7" height="7"/><rect x="14" y="15" width="7" height="7"/></svg>Categories</a></li>
+      <li><a href="{{ '/category/' | relative_url }}"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>Filtered list</a></li>
     </ul>
-
-    <div class="gt-social">
-      <a href="https://github.com/GameTithe" target="_blank" rel="noopener noreferrer"><svg class="gt-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 .2 1.6-.7 2-.9.1-.8.4-1.3.7-1.6-2.7-.3-5.6-1.4-5.6-6.1 0-1.4.5-2.6 1.2-3.5-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.8 1.3a13 13 0 0 1 7 0c2.8-1.6 3.8-1.3 3.8-1.3.6 1.7.2 3 .1 3.3.8.9 1.2 2.1 1.2 3.5 0 4.7-2.9 5.8-5.7 6.1.4.4.8 1.2.8 2.3v3.5c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
-      <a href="mailto:you@example.com"><svg class="gt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>이메일</a>
-    </div>
   </aside>
 
   <main class="gt-main">
-    <section class="gt-panel">
-      <h2>최근 글</h2>
-      <div class="gt-posts">
-        {% for post in site.posts limit: 24 %}
-          <article class="gt-post">
-            {% assign auto_thumb = '/assets/images/posts/' | append: post.slug | append: '/img-1.png' %}
-            {% assign auto_thumb_file = site.static_files | where: "path", auto_thumb | first %}
-            {% assign thumb = '/assets/images/profile/GameTithe.png' %}
-            {% if auto_thumb_file %}
-              {% assign thumb = auto_thumb %}
-            {% endif %}
-            <div class="gt-post-top">
-              <a href="{{ post.url | relative_url }}">
-                <img class="gt-thumb" src="{{ thumb | relative_url }}" alt="{{ post.title }} thumbnail" loading="lazy" />
-              </a>
-              <div>
-                <div class="meta">{{ post.date | date: "%Y.%m.%d" }}{% if post.categories and post.categories.size > 0 %} · {{ post.categories | first }}{% endif %}</div>
-                <h3 class="title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-                <p class="excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+    <section class="gt-panel" id="category-groups">
+      <h2>Category Explorer</h2>
+      <div class="gt-topic-wrap">
+        {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+        {% assign seen_mains = "" %}
+        {% for post in sorted_posts %}
+          {% assign main = post.categories | first | default: "Uncategorized" %}
+          {% assign main_marker = "|" | append: main | append: "|" %}
+          {% unless seen_mains contains main_marker %}
+            {% assign seen_mains = seen_mains | append: main_marker %}
+
+            {% assign topic_total = 0 %}
+            {% for topic_post in sorted_posts %}
+              {% assign topic_main = topic_post.categories | first | default: "Uncategorized" %}
+              {% if topic_main == main %}
+                {% assign topic_total = topic_total | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+
+            <article class="gt-topic-box">
+              <div class="gt-topic-head">
+                <h3 class="gt-topic-title">{{ main }}</h3>
+                <span class="gt-topic-count">{{ topic_total }} posts</span>
               </div>
-            </div>
-          </article>
+
+              <div class="gt-sub-grid">
+                {% assign seen_subs = "" %}
+                {% for sub_post in sorted_posts %}
+                  {% assign sub_main = sub_post.categories | first | default: "Uncategorized" %}
+                  {% if sub_main == main %}
+                    {% assign sub = sub_post.sub_category | default: sub_post.subcategory | default: sub_post.categories[1] | default: "General" %}
+                    {% assign sub_marker = "|" | append: sub | append: "|" %}
+                    {% unless seen_subs contains sub_marker %}
+                      {% assign seen_subs = seen_subs | append: sub_marker %}
+
+                      {% assign sub_count = 0 %}
+                      {% for count_post in sorted_posts %}
+                        {% assign count_main = count_post.categories | first | default: "Uncategorized" %}
+                        {% assign count_sub = count_post.sub_category | default: count_post.subcategory | default: count_post.categories[1] | default: "General" %}
+                        {% if count_main == main and count_sub == sub %}
+                          {% assign sub_count = sub_count | plus: 1 %}
+                        {% endif %}
+                      {% endfor %}
+
+                      {% capture image_prefix %}/assets/images/categories/{{ main }}/{{ sub }}/{% endcapture %}
+                      {% assign sub_image = site.static_files | where_exp: "f", "f.path contains image_prefix" | first %}
+
+                      <a class="gt-sub-card" href="{{ '/category/' | relative_url }}?main={{ main | url_encode }}&sub={{ sub | url_encode }}">
+                        {% if sub_image %}
+                          <img class="gt-sub-thumb" src="{{ sub_image.path | relative_url }}" alt="{{ main }} {{ sub }}" loading="lazy" />
+                        {% else %}
+                          <div class="gt-sub-thumb-fallback">{{ sub }}</div>
+                        {% endif %}
+                        <div class="gt-sub-info">
+                          <p class="gt-sub-name">{{ sub }}</p>
+                          <p class="gt-sub-meta">{{ sub_count }} posts</p>
+                        </div>
+                      </a>
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </article>
+          {% endunless %}
         {% endfor %}
       </div>
     </section>
 
-    <section class="gt-panel" id="categories">
-      <h2>카테고리</h2>
-      <div class="gt-chip-wrap">
-        {% for category in site.categories %}
-          <span class="gt-chip">{{ category[0] }} ({{ category[1].size }})</span>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="gt-panel" id="tags">
-      <h2>태그</h2>
-      <div class="gt-chip-wrap">
-        {% assign sorted_tags = site.tags | sort %}
-        {% for tag in sorted_tags limit: 40 %}
-          <span class="gt-chip">#{{ tag[0] }}</span>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="gt-panel" id="archive">
-      <h2>아카이브</h2>
-      <ul class="gt-archive">
-        {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
-        {% for year in posts_by_year %}
-          <li>{{ year.name }}년 ({{ year.items | size }}개)</li>
-        {% endfor %}
+    <section class="gt-panel">
+      <h2>How this works</h2>
+      <ul class="gt-info-list">
+        <li>Main category uses `categories[0]` in each post front matter.</li>
+        <li>Sub category uses `sub_category` or `categories[1]`; if absent, `General` is used.</li>
+        <li>Sub-category card image path: `assets/images/categories/&lt;main&gt;/&lt;sub&gt;/...`</li>
       </ul>
-    </section>
-
-    <section class="gt-panel" id="info">
-      <h2>정보</h2>
-      <p>이 페이지는 티스토리 스타일을 참고해 사이드바 중심 UI로 재구성한 커스텀 홈입니다.</p>
-      <p>총 게시글: <strong>{{ site.posts | size }}</strong>개 · RSS: <a href="{{ '/feed.xml' | relative_url }}">feed.xml</a></p>
     </section>
   </main>
 </section>
