@@ -293,12 +293,11 @@ layout: default
                     {% assign sub_main = sub_post.categories | first | default: "Uncategorized" %}
                     {% if sub_main == main %}
                       {% assign sub = sub_post.sub_category | default: sub_post.subcategory | default: sub_post.categories[1] | default: "General" %}
-                      {% assign is_general = sub == "General" %}
                       {% assign should_render = false %}
-                      {% if pass == 1 and is_general == false %}
+                      {% if pass == 1 and sub != "General" %}
                         {% assign should_render = true %}
                       {% endif %}
-                      {% if pass == 2 and is_general %}
+                      {% if pass == 2 and sub == "General" %}
                         {% assign should_render = true %}
                       {% endif %}
                       {% if should_render %}
