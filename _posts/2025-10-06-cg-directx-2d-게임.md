@@ -3,9 +3,10 @@ title: "[CG] DirectX 2D 게임"
 date: 2025-10-06
 toc: true
 categories:
-  - "Tistory"
+  - "자체 엔진"
+sub_category: "DX11 Bgario" 
 tags:
-  - "tistory"
+  - "DirectX"
 ---
 
 2박 3일 동안 만든 게임입니다.
