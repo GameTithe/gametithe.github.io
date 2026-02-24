@@ -3,7 +3,7 @@ title: "[CG] DirectX 2D 게임"
 date: 2025-10-06
 toc: true
 categories:
-  - "자체 엔진"
+  - "자체엔진"
 sub_category: "DX11 Bgario" 
 tags:
   - "DirectX"
