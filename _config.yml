@@ -11,4 +11,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-    
+
+exclude:
+  - 0000-00-00-Title.md
+  - templates/
