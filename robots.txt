@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gametithe.github.io/sitemap_index.xml
 Sitemap: https://gametithe.github.io/sitemap.xml
