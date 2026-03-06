@@ -1,5 +1,5 @@
 ---
-title: "3D 세계 만들기 - Obj Parsing, Obj Viewer"
+title: "Obj Parsing/Viewer"
 date: 2025-10-07
 toc: true
 categories:
