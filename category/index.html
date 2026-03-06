@@ -252,7 +252,7 @@ layout: default
         <article class="ct-post">
           <div class="ct-post-top">
             <a href="${post.url}">
-              <img class="ct-thumb" src="${post.thumb}" alt="${post.title} thumbnail" loading="lazy" />
+              <img class="ct-thumb" src="${post.thumb}" alt="${post.title} thumbnail" loading="lazy" onerror="this.onerror=null;this.src='{{ '/assets/images/profile/GameTithe.png' | relative_url }}';" />
             </a>
             <div>
               <div class="ct-meta">${post.date} | ${post.main} | ${post.sub}</div>
