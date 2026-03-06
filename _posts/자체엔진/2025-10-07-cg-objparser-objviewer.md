@@ -4,7 +4,7 @@ date: 2025-10-07
 toc: true
 categories:
   - "자체엔진"
-sub_category: "Feature"
+sub_category: "Features"
 tags:
   - "DirectX"
 ---
