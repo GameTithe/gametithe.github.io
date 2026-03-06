@@ -162,13 +162,46 @@ layout: default
       {% assign main = post.categories | first | default: "Uncategorized" %}
       {% assign sub = post.sub_category | default: post.subcategory | default: post.categories[1] | default: "General" %}
       {% assign manual_thumb = post.thumbnail | default: post.thumb | default: post.image %}
-      {% assign auto_thumb = '/assets/images/posts/' | append: post.slug | append: '/img-1.png' %}
-      {% assign auto_thumb_file = site.static_files | where: "path", auto_thumb | first %}
-      {% assign thumb = '/assets/images/profile/GameTithe.png' %}
+      {% assign profile_thumb = '/assets/images/profile/GameTithe.png' %}
+      {% assign thumb = profile_thumb %}
       {% if manual_thumb != blank %}
         {% assign thumb = manual_thumb %}
-      {% elsif auto_thumb_file %}
-        {% assign thumb = auto_thumb %}
+      {% else %}
+        {% assign content_html = post.content | strip_newlines %}
+        {% assign img_parts = content_html | split: '<img' %}
+        {% if img_parts.size > 1 %}
+          {% assign first_img_part = img_parts[1] %}
+          {% if first_img_part contains 'src="' %}
+            {% assign thumb = first_img_part | split: 'src="' | last | split: '"' | first %}
+          {% endif %}
+        {% endif %}
+
+        {% if thumb == profile_thumb %}
+          {% assign md_img_parts = post.content | split: '![' %}
+          {% if md_img_parts.size > 1 %}
+            {% assign md_first = md_img_parts[1] %}
+            {% if md_first contains '](' %}
+              {% assign thumb = md_first | split: '](' | last | split: ')' | first %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% if thumb == profile_thumb %}
+          {% assign iframe_parts = content_html | split: '<iframe' %}
+          {% if iframe_parts.size > 1 %}
+            {% assign first_iframe_part = iframe_parts[1] %}
+            {% if first_iframe_part contains 'src="' %}
+              {% assign iframe_src = first_iframe_part | split: 'src="' | last | split: '"' | first %}
+              {% if iframe_src contains 'youtube.com/embed/' %}
+                {% assign youtube_id = iframe_src | split: 'youtube.com/embed/' | last | split: '?' | first %}
+                {% assign thumb = 'https://img.youtube.com/vi/' | append: youtube_id | append: '/hqdefault.jpg' %}
+              {% elsif iframe_src contains 'youtu.be/' %}
+                {% assign youtube_id = iframe_src | split: 'youtu.be/' | last | split: '?' | first %}
+                {% assign thumb = 'https://img.youtube.com/vi/' | append: youtube_id | append: '/hqdefault.jpg' %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
       {% endif %}
       {
         "title": {{ post.title | jsonify }},
@@ -177,7 +210,7 @@ layout: default
         "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncate: 140 | jsonify }},
         "main": {{ main | jsonify }},
         "sub": {{ sub | jsonify }},
-        "thumb": {{ thumb | relative_url | jsonify }}
+        "thumb": {% if thumb contains '://' %}{{ thumb | jsonify }}{% else %}{{ thumb | relative_url | jsonify }}{% endif %}
       }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];

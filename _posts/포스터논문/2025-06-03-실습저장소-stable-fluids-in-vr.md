@@ -5,6 +5,7 @@ date: 2025-06-03
 toc: true
 categories:
   - "KCGS 포스터 논문"
+sub_category: "StableFluid In VR" 
 tags:
   - "Simulation"
 ---
