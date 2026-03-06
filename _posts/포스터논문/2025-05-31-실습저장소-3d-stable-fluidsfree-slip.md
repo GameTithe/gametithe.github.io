@@ -1,11 +1,12 @@
 ---
+layout: post
 title: "[실습저장소] 3D Stable Fluids(+free slip)"
 date: 2025-05-31
 toc: true
 categories:
-  - "Tistory"
+  - "KCGS 포스터 논문"
 tags:
-  - "tistory"
+  - "Simulation"  
 ---
 
 ![](https://blog.kakaocdn.net/dna/UrVfm/btsOlatFCZc/AAAAAAAAAAAAAAAAAAAAADot6UWu7mhXOTZLL4PnCMYHvFb60RsPonLOB0flbfdS/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1772290799&allow_ip=&allow_referer=&signature=C1kyZtYQEgLfhMWYP2axKH3l2IQ%3D)

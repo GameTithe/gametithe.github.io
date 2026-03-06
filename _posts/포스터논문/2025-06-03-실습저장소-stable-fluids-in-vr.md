@@ -1,11 +1,12 @@
 ---
+layout: post
 title: "[실습저장소] Stable Fluids (in VR)"
 date: 2025-06-03
 toc: true
 categories:
-  - "Tistory"
+  - "KCGS 포스터 논문"
 tags:
-  - "tistory"
+  - "Simulation"
 ---
 
 3D랑 VR이랑 거의 동일한 것 같아요.

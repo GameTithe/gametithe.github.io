@@ -1,11 +1,12 @@
 ---
+layout: post
 title: "[실습저장소] Stable Fluids (in VR) - 2"
 date: 2025-06-06
 toc: true
 categories:
-  - "Tistory"
+  - "KCGS 포스터 논문"
 tags:
-  - "tistory"
+  - "Simulation"
 ---
 
 프로젝트 마감이 얼마 안감았고, 시험기간이기도 해서,,,   
