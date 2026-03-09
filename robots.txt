@@ -1,4 +1,10 @@
+---
+layout: null
+permalink: /robots.txt
+sitemap: false
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://gametithe.github.io/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap_index.xml

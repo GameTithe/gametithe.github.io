@@ -2,6 +2,7 @@ title: "GameTithe"
 description: "Game development and graphics programming notes."
 url: "https://gametithe.github.io"
 baseurl: ""
+permalink: /:categories/:year/:month/:day/:title.html
 lang: "ko-KR"
 timezone: "Asia/Seoul"
 theme: minima
@@ -12,5 +13,13 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - _site/
   - 0000-00-00-Title.md
+  - README.md
+  - docker.txt
+  - failed_exceptions.txt
+  - failed_exceptions_retry.txt
+  - failed_posts.txt
+  - nul
+  - scripts/
   - templates/
